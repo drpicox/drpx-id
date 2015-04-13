@@ -1,0 +1,26 @@
+{
+  "name": "drpx-id",
+  "version": "1.0.0",
+  "description": "An Angular directive to link directives together inside a template so they can be used as components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drpicox/drpx-id"
+  },
+  "keywords": [
+    "angularjs",
+    "controller",
+    "id",
+    "children",
+    "directive"
+  ],
+  "author": "David Rodenas <david.rodenas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drpicox/drpx-id/issues"
+  },
+  "homepage": "https://github.com/drpicox/drpx-id"
+}

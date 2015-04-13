@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>drpx-components - DrpxId demo</title>
+</head>
+<body ng-app="drpxId.demo">
+	<h2>Id decorator demo</h2>
+
+    <toggle id="theToggle"></toggle>
+    <button ng-click="$.theToggle.toggle()">Toggle</button>
+    <h1 ng-show="$.theToggle.isOpen()">My Content</h1>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="drpx-id.js"></script>
+	<script>
+		angular
+			.module('drpxId.demo', [
+				'drpxId'
+			])
+
+			.directive('toggle', function() {
+				return {
+					restrict: 'E',
+					scope: {},
+					controllerAs: 'vm',
+					controller: function() {
+						var vm = this;
+						var opened = false;
+
+						vm.close = function() {
+							opened = false;
+						};
+						vm.isOpen = function() {
+							return opened;
+						};
+						vm.open = function() {
+							opened = true;
+						};
+						vm.toggle = function() {
+							opened = !opened;
+						};
+					},
+				};
+			})
+
+			;
+	</script>
+
+</body>
+</html>
