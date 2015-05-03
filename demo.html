@@ -3,12 +3,19 @@
 <head>
 	<title>drpx-components - DrpxId demo</title>
 </head>
-<body ng-app="drpxId.demo">
+<body ng-app="drpxId.demo" ng-controller="DemoController as vm">
 	<h2>Id decorator demo</h2>
 
+	<h3>Audio (html native) demo</h3>
+	<audio id="audio" src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg">
+		Your browser does not support the <code>audio</code> element.
+	</audio>
+	<button ng-click="vm.play()">Play audio</button>
+
+	<h3>Toggle (angular) demo</h3>
     <toggle id="theToggle"></toggle>
-    <button ng-click="$.theToggle.toggle()">Toggle</button>
-    <h1 ng-show="$.theToggle.isOpen()">My Content</h1>
+    <button ng-click="vm.theToggle.toggle()">Toggle</button>
+    <h1 ng-show="vm.theToggle.isOpen()">My Content</h1>
 
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="drpx-id.js"></script>
@@ -17,6 +24,14 @@
 			.module('drpxId.demo', [
 				'drpxId'
 			])
+
+			.controller('DemoController', function() {
+				var vm = this;
+
+				vm.play = function() {
+					vm.audio.play();
+				};
+			})
 
 			.directive('toggle', function() {
 				return {

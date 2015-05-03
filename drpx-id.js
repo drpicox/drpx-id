@@ -68,9 +68,11 @@
 			/* FIXME: temporary solution until AngularJS 1.4 , now it requires debugInfo to work */
 			link: function (scope,element,attrs) {
 				var elementScope = element.isolateScope();
+				var vm = scope.vm = scope.vm || {};
 				if (elementScope) {
-					scope.$ = scope.$ || {};
-					scope.$[attrs.id] = elementScope.vm;
+					scope.vm[attrs.id] = elementScope.vm;
+				} else {
+					scope.vm[attrs.id] = element[0];
 				}
 			},
 		};
