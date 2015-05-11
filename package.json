@@ -1,6 +1,6 @@
 {
   "name": "drpx-id",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "An Angular directive to link directives together inside a template so they can be used as components",
   "main": "index.js",
   "scripts": {
