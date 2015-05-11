@@ -65,14 +65,18 @@
 	function idDirective() {
 		var directive = {
 			restrict: 'A',
-			/* FIXME: temporary solution until AngularJS 1.4 , now it requires debugInfo to work */
 			link: function (scope,element,attrs) {
-				var elementScope = element.isolateScope();
+				// look for current controller
+				var controllerName = element[0].tagName.toLowerCase()
+					.replace(/[^\w]\w/g, function(a) { a.slice(1).toUpperCase(); });
+				var elementController = element.controller(controllerName);
+				// register controller into the vm
 				var vm = scope.vm = scope.vm || {};
-				if (elementScope) {
-					scope.vm[attrs.id] = elementScope.vm;
+				if (elementController) {
+					vm[attrs.id] = elementController;
 				} else {
-					scope.vm[attrs.id] = element[0];
+					// or register the element
+					vm[attrs.id] = element[0];
 				}
 			},
 		};
