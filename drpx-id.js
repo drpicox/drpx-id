@@ -50,8 +50,8 @@
 	
 	Usage of the toggle with the directive:
     <toggle id="theToggle"></toggle>
-    <button ng-click="$.theToggle.toggle()">Toggle</button>
-    <h1 ng-show="$.theToggle.isOpen()">My Content</h1>
+    <button ng-click="vm.theToggle.toggle()">Toggle</button>
+    <h1 ng-show="vm.theToggle.isOpen()">My Content</h1>
 
 */
 ;(function(angular) {
@@ -66,7 +66,7 @@
 		var directive = {
 			restrict: 'A',
 			link: function (scope,element,attrs) {
-				// look for current controller
+				// look for current controller (converts some-thing into someThing)
 				var controllerName = element[0].tagName.toLowerCase()
 					.replace(/[^\w]\w/g, function(a) { a.slice(1).toUpperCase(); });
 				var elementController = element.controller(controllerName);
