@@ -68,7 +68,7 @@
 			link: function (scope,element,attrs) {
 				// look for current controller (converts some-thing into someThing)
 				var controllerName = element[0].tagName.toLowerCase()
-					.replace(/[^\w]\w/g, function(a) { a.slice(1).toUpperCase(); });
+					.replace(/[^\w]\w/g, function(a) { return a.slice(1).toUpperCase(); });
 				var elementController = element.controller(controllerName);
 				// register controller into the vm
 				var vm = scope.vm = scope.vm || {};
