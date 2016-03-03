@@ -1,3 +1,9 @@
+> ### Notice
+> 
+> I have made a PR of a improved version of this directive. 
+> You can find details here https://github.com/angular/angular.js/pull/14080 and http://david-rodenas.com/#!/tags/angular
+
+
 drpx-id
 =================
 
