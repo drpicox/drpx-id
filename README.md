@@ -9,8 +9,6 @@ drpx-id
 
 An Angular directive to link directives together inside a template so they can be used as components. 
 
-It leverages in [John Papa styleguide](https://github.com/johnpapa/angular-styleguide) to expose a directive controller in the current scope so it can be used.
-
 It is the reverse of `require:` of the directive configuration, it allows parent to reference children.
 
 
